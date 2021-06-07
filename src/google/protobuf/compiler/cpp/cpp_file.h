@@ -113,6 +113,9 @@ class FileGenerator {
   void GenerateSourceIncludes(io::Printer* printer);
   void GenerateSourceDefaultInstance(int idx, io::Printer* printer);
 
+  std::string GenerateSourceTopPragma();
+  void GenerateSourceBottomPragma(io::Printer* printer);
+
   void GenerateInitForSCC(const SCC* scc, const CrossFileReferences& refs,
                           io::Printer* printer);
   void GenerateTables(io::Printer* printer);
@@ -124,6 +127,9 @@ class FileGenerator {
   // Generates top or bottom of a header file.
   void GenerateTopHeaderGuard(io::Printer* printer, bool pb_h);
   void GenerateBottomHeaderGuard(io::Printer* printer, bool pb_h);
+
+  std::string GenerateHeaderTopPragma();
+  void GenerateHeaderBottomPragma(io::Printer* printer);
 
   // Generates #include directives.
   void GenerateLibraryIncludes(io::Printer* printer);
